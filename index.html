@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="password-generator-wrapper">
+        <h3 class="title">Password Generator</h3>
+        <div class="password-output-wrapper">
+            <p class="password-output">Generate password below...</p>
+            <ion-icon onclick="copyPassword()" class="clipboard-icon" name="clipboard-outline"></ion-icon>
+        </div>
+        <div class="password-options">
+            <div class="character-length-wrapper">
+                <p>Character Length</p>
+                <h3 id="character-length">20</h3>
+            </div>
+            <input oninput="updateCharacterLength()" type="range" min="1" max="40" value="20" class="slider" id="myRange">
+            <div class="checkbox-wrapper">
+                <div>
+                    <input onclick="updateCheckboxValues()" type="checkbox" id="uppercase" name="uppercase">
+                    <label for="uppercase"> Include Uppercase letters</label>
+                </div>
+                <div>
+                    <input onclick="updateCheckboxValues()" type="checkbox" id="lowercase" name="lowercase">
+                    <label for="lowercase"> Include Lowercase letters</label>
+                </div>
+                <div>
+                    <input onclick="updateCheckboxValues()" type="checkbox" id="numbers" name="numbers">
+                    <label for="numbers"> Include Numbers</label>
+                </div>
+                <div>                    
+                    <input onclick="updateCheckboxValues()" type="checkbox" id="symbols" name="symbols">
+                    <label for="symbols"> Include Symbols</label>
+                </div>
+            </div>
+            <div class="strength-wrapper">
+                <p>STRENGTH</p>
+                <div class="strength-bars">
+                    <div class="bar" id="bar-1"></div>
+                    <div class="bar" id="bar-2"></div>
+                    <div class="bar" id="bar-3"></div>
+                    <div class="bar" id="bar-4"></div>
+                </div>
+            </div>
+            <button onclick="generatePassword()" id="generate-button">GENERATE -></button>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
